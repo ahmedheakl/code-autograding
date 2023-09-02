@@ -2,7 +2,7 @@
 import argparse
 
 from transcoder.translate import translate
-from codegrader.preprocess.ast import print_ast
+from codegrader.preprocess.astviz import view_ast
 
 
 def parse_args():
@@ -28,5 +28,4 @@ def main():
         print(out)
 
     print("=" * 20)
-    print("AST:")
-    print_ast("".join(output))
+    view_ast("".join(output))
