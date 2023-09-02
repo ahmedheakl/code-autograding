@@ -2,6 +2,7 @@
 import argparse
 
 from transcoder.translate import translate
+from codegrader.preprocess.ast import print_ast
 
 
 def parse_args():
@@ -25,3 +26,7 @@ def main():
     output = translate(src_lang=args.src_lang, tgt_lang=args.trg_lang, input_code=code)
     for out in output:
         print(out)
+
+    print("=" * 20)
+    print("AST:")
+    print_ast("".join(output))
